@@ -169,6 +169,7 @@ function exibeScore(x, y, score) {
 
 function atualizaJogo() {
     backgroundMusic.play();
+    backgroundMusic.loop = true;
     limpaTela();
     desenhaRaquete(xRaquete1, yRaquete1);
     desenhaRaquete(xRaquete2, yRaquete2);
