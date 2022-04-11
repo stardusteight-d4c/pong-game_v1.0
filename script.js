@@ -43,6 +43,7 @@ const hit = new Audio('sounds/hitExplosion.mp3');
 const raquetada1 = new Audio('sounds/raquetada1.mp3');
 const raquetada2 = new Audio('sounds/raquetada2.mp3');
 const colisao = new Audio('sounds/colisaoBorda.mp3');
+const backgroundMusic = new Audio('sounds/bensound-psychedelic.mp3')
 
 function desenhaBorda(yLocation, yEspessura) {
     pincel.fillStyle = 'white';
@@ -117,10 +118,13 @@ function moveRaquetes(evento) {
             yRaquete1 += velocidadeRaquete1;
         }
     } if (evento.keyCode == setaCima){
-        yRaquete2 -= velocidadeRaquete2;
-    }
-    if (evento.keyCode == setaBaixo){
-        yRaquete2 += velocidadeRaquete2;
+        if (yRaquete2 > 10) {
+            yRaquete2 -= velocidadeRaquete2;
+        }
+    } else if (evento.keyCode == setaBaixo){
+        if (yRaquete2 < 350) {
+            yRaquete2 += velocidadeRaquete2;
+        }
     }
 }
 
@@ -164,6 +168,7 @@ function exibeScore(x, y, score) {
 }
 
 function atualizaJogo() {
+    backgroundMusic.play();
     limpaTela();
     desenhaRaquete(xRaquete1, yRaquete1);
     desenhaRaquete(xRaquete2, yRaquete2);
