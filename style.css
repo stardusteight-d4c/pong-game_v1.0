@@ -1,5 +1,5 @@
 html { 
-    background: url(cover.jpg) no-repeat center center fixed; 
+    background: url(background.jpg) no-repeat center center fixed; 
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -10,9 +10,12 @@ html {
 canvas {
     padding-left: 0;
     padding-right: 0;
-    padding-top: 80px;
+    margin-top: 50px;
     margin-left: auto;
     margin-right: auto;
     display: block;
-    width: 800px;
+    width: 900px;
+    background: #00000070;
+    border-radius: 10px;
 }
+
