@@ -40,8 +40,7 @@ let score2 = 0
 
 // sons
 const hit = new Audio('sounds/hitExplosion.mp3')
-const raquetada1 = new Audio('sounds/raquetada1.mp3')
-const raquetada2 = new Audio('sounds/raquetada2.mp3')
+const raquetada = new Audio('sounds/raquetada1.mp3')
 const colisao = new Audio('sounds/colisaoBorda.mp3')
 const backgroundMusic = new Audio('sounds/bensound-psychedelic.mp3')
 
@@ -101,7 +100,7 @@ function colisaoBolaRaquete(x, y, raquete2 = false) {
       yBola > y - bolaDiametro
     ) {
       xMovimentoBola *= -1
-      raquetada1.play()
+      raquetada.play()
     }
   }
   if (raquete2 == true) {
@@ -111,7 +110,7 @@ function colisaoBolaRaquete(x, y, raquete2 = false) {
       yBola < y + raqueteComprimento
     ) {
       xMovimentoBola *= -1
-      raquetada2.play()
+      raquetada.play()
     }
   }
 }
